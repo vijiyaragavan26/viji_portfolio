@@ -53,7 +53,7 @@ export const ContactSection: React.FC = () => {
     const emailSubject = `${topic} — Inquiry from ${senderName}`;
 
     // Professional Email Body
-    const emailBody = `Dear Vijayaragavan,\n\n${userMessage || 'I came across your portfolio and would like to connect with you regarding ' + topic + '.'}\n\nBest regards,\n${senderName}${senderEmail ? `\n${senderEmail}` : ''}\n\n---\nSent via Vijayaragavan V Portfolio`;
+    const emailBody = `Dear Vijiyaragavan,\n\n${userMessage || 'I came across your portfolio and would like to connect with you regarding ' + topic + '.'}\n\nBest regards,\n${senderName}${senderEmail ? `\n${senderEmail}` : ''}\n\n---\nSent via Vijiyaragavan V Portfolio`;
 
     // Direct Gmail Web compose URL
     const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(

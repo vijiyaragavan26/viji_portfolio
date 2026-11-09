@@ -1,10 +1,10 @@
 import { ProfileData } from '../types';
 
 export const profileData: ProfileData = {
-  name: 'Vijayaragavan V',
+  name: 'Vijiyaragavan V',
   initials: 'VV',
   headline: 'B.E - CSE Student | Aspiring Software Engineer | Full-Stack Developer',
-  greeting: "Hi, I'm Vijayaragavan V.",
+  greeting: "Hi, I'm Vijiyaragavan V.",
   heroHeadline: 'Building the Future with Code, AI & IoT.',
   heroDescription:
     'Self-driven 2nd year Computer Science and Engineering (IoT) undergraduate with a CGPA of 8.70/10. Passionate about building algorithms, web technologies, artificial intelligence, and IoT applications for real-world impact.',

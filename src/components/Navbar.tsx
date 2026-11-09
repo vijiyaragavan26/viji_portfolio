@@ -96,8 +96,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal }) => {
           </div>
 
           <div className="flex flex-col text-left">
-            <span className="font-bold text-base sm:text-lg tracking-normal text-slate-900 dark:text-dark-text leading-tight group-hover:text-primary transition-colors flex items-center gap-1.5">
-              <span>{profile.name.split(' ').slice(0, -1).join(' ').toUpperCase() || 'VIJAYARAGAVAN'}</span>
+            <span className="font-bold text-base sm:text-lg tracking-normal text-slate-900 dark:text-dark-text leading-tight group-hover:text-primary transition-colors flex items-center gap-2">
+              <span>{profile.name.split(' ').slice(0, -1).join(' ').toUpperCase() || 'VIJIYARAGAVAN'}</span>
               <span>{profile.name.split(' ').slice(-1)[0]?.toUpperCase() || 'V'}</span>
             </span>
             <span className="font-mono text-[11px] text-primary font-medium tracking-wide">

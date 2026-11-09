@@ -83,7 +83,7 @@ interface DataContextType {
 }
 
 const STORAGE_KEYS = {
-  PROFILE: 'portfolio_data_profile_v2',
+  PROFILE: 'portfolio_data_profile_v3',
   PROJECTS: 'portfolio_data_projects_v2',
   SKILLS: 'portfolio_data_skills_v2',
   EDUCATION: 'portfolio_data_education_v2',
