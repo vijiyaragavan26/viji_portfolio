@@ -95,12 +95,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal }) => {
             <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-emerald-400 border-2 border-dark-bg" />
           </div>
 
-          <div className="flex flex-col text-left">
-            <span className="font-bold text-base sm:text-lg tracking-normal text-slate-900 dark:text-dark-text leading-tight group-hover:text-primary transition-colors flex items-center gap-2">
+          <div className="flex flex-col text-left min-w-0">
+            <span className="font-bold text-sm sm:text-base md:text-lg tracking-normal text-slate-900 dark:text-dark-text leading-tight group-hover:text-primary transition-colors flex items-center gap-1.5 sm:gap-2 truncate">
               <span>{profile.name.split(' ').slice(0, -1).join(' ').toUpperCase() || 'VIJIYARAGAVAN'}</span>
               <span>{profile.name.split(' ').slice(-1)[0]?.toUpperCase() || 'V'}</span>
             </span>
-            <span className="font-mono text-[11px] text-primary font-medium tracking-wide">
+            <span className="font-mono text-[10px] sm:text-[11px] text-primary font-medium tracking-wide truncate">
               {profile.roles?.[0] || 'B.E - CSE Student'}
             </span>
           </div>
@@ -169,55 +169,64 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal }) => {
 
       {/* Mobile Drawer (Matches the reference model styling) */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-dark-bg/98 dark:bg-dark-bg/98 bg-white/98 border-b border-primary/20 backdrop-blur-xl shadow-2xl overflow-hidden animate-in slide-in-from-top-3 duration-200">
-          <div className="px-5 py-6 space-y-2 max-h-[80vh] overflow-y-auto">
-            
-            {/* Header info bar */}
-            <div className="pb-3 mb-3 border-b border-primary/20 flex items-center justify-between">
-              <span className="text-xs font-mono font-semibold text-dark-muted dark:text-dark-muted text-slate-600">
-                NAVIGATION DIRECTORY
-              </span>
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-dark-surface dark:bg-dark-surface bg-slate-100 text-primary border border-primary/30 font-semibold">
-                {profile.roles?.[0] || 'B.E - CSE Student'}
-              </span>
-            </div>
+        <>
+          {/* Backdrop Overlay */}
+          <div
+            className="fixed inset-0 top-[70px] bg-black/60 backdrop-blur-sm z-40 lg:hidden animate-in fade-in duration-200"
+            onClick={() => setMobileMenuOpen(false)}
+            aria-hidden="true"
+          />
 
-            {/* Links List */}
-            {navLinks.map((item) => {
-              const isActive = activeSection === item.href.substring(1);
+          <div className="relative z-50 lg:hidden bg-dark-bg/98 dark:bg-dark-bg/98 bg-white/98 border-b border-primary/20 backdrop-blur-xl shadow-2xl overflow-hidden animate-in slide-in-from-top-3 duration-200">
+            <div className="px-5 py-6 space-y-2 max-h-[80vh] overflow-y-auto">
+              
+              {/* Header info bar */}
+              <div className="pb-3 mb-3 border-b border-primary/20 flex items-center justify-between">
+                <span className="text-xs font-mono font-semibold text-dark-muted dark:text-dark-muted text-slate-600">
+                  NAVIGATION DIRECTORY
+                </span>
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-dark-surface dark:bg-dark-surface bg-slate-100 text-primary border border-primary/30 font-semibold">
+                  {profile.roles?.[0] || 'B.E - CSE Student'}
+                </span>
+              </div>
 
-              if (item.isAction) {
+              {/* Links List */}
+              {navLinks.map((item) => {
+                const isActive = activeSection === item.href.substring(1);
+
+                if (item.isAction) {
+                  return (
+                    <a
+                      key={item.href}
+                      href={item.href}
+                      onClick={(e) => handleLinkClick(e, item.href)}
+                      className="min-h-[44px] px-4 py-3 rounded-xl text-base font-medium bg-dark-surface dark:bg-dark-surface bg-slate-100 text-slate-900 dark:text-dark-text border border-primary/40 font-bold text-center flex items-center justify-center gap-2 mt-3 hover:bg-primary/20 hover:text-primary transition-colors"
+                    >
+                      <Send className="w-4 h-4 text-primary" />
+                      <span>{item.label}</span>
+                    </a>
+                  );
+                }
+
                 return (
                   <a
                     key={item.href}
                     href={item.href}
                     onClick={(e) => handleLinkClick(e, item.href)}
-                    className="block px-3 py-2.5 rounded-lg text-base font-medium bg-dark-surface dark:bg-dark-surface bg-slate-100 text-slate-900 dark:text-dark-text border border-primary/40 font-bold text-center flex items-center justify-center gap-2 mt-3 hover:bg-primary/20 hover:text-primary transition-colors"
+                    className={`min-h-[44px] flex items-center px-4 py-2.5 rounded-xl text-base font-medium transition-colors ${
+                      isActive
+                        ? 'text-primary font-bold bg-primary/10'
+                        : 'text-slate-900 dark:text-dark-text hover:bg-dark-surface dark:hover:bg-dark-surface hover:text-primary'
+                    }`}
                   >
-                    <Send className="w-4 h-4 text-primary" />
-                    <span>{item.label}</span>
+                    {item.label}
                   </a>
                 );
-              }
+              })}
 
-              return (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  onClick={(e) => handleLinkClick(e, item.href)}
-                  className={`block px-3 py-2.5 rounded-lg text-base font-medium transition-colors ${
-                    isActive
-                      ? 'text-primary font-bold bg-primary/10'
-                      : 'text-slate-900 dark:text-dark-text hover:bg-dark-surface dark:hover:bg-dark-surface hover:text-primary'
-                  }`}
-                >
-                  {item.label}
-                </a>
-              );
-            })}
-
+            </div>
           </div>
-        </div>
+        </>
       )}
     </header>
   );

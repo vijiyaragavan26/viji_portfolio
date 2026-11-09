@@ -293,7 +293,7 @@ export const ContactSection: React.FC = () => {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="Prof. / Dr. / Researcher"
-                      className="w-full px-4 py-3 rounded-xl text-xs sm:text-sm bg-[#020b14] border border-cyan-500/30 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 transition-colors"
+                      className="w-full px-4 py-3 rounded-xl text-base sm:text-sm bg-[#020b14] border border-cyan-500/30 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 transition-colors"
                     />
                   </div>
 
@@ -311,7 +311,7 @@ export const ContactSection: React.FC = () => {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="name@institution.edu"
-                      className="w-full px-4 py-3 rounded-xl text-xs sm:text-sm bg-[#020b14] border border-cyan-500/30 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 transition-colors"
+                      className="w-full px-4 py-3 rounded-xl text-base sm:text-sm bg-[#020b14] border border-cyan-500/30 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 transition-colors"
                     />
                   </div>
                 </div>
@@ -329,7 +329,7 @@ export const ContactSection: React.FC = () => {
                       id="form-subject"
                       value={formData.subject}
                       onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl text-xs sm:text-sm bg-[#020b14] border border-cyan-500/30 text-white focus:outline-none focus:border-cyan-400 transition-colors appearance-none cursor-pointer"
+                      className="w-full px-4 py-3 rounded-xl text-base sm:text-sm bg-[#020b14] border border-cyan-500/30 text-white focus:outline-none focus:border-cyan-400 transition-colors appearance-none cursor-pointer"
                     >
                       <option value="Research Internship Opportunity" className="bg-[#04121e] text-white">
                         Research Internship Opportunity
@@ -367,7 +367,7 @@ export const ContactSection: React.FC = () => {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Share details regarding your research inquiry, internship opening, or academic opportunity..."
-                    className="w-full px-4 py-3 rounded-xl text-xs sm:text-sm bg-[#020b14] border border-cyan-500/30 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 transition-colors resize-y min-h-[110px]"
+                    className="w-full px-4 py-3 rounded-xl text-base sm:text-sm bg-[#020b14] border border-cyan-500/30 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 transition-colors resize-y min-h-[110px]"
                   />
                 </div>
 

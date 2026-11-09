@@ -204,10 +204,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
               <div className="absolute -inset-1.5 bg-gradient-to-r from-primary/30 to-secondary/30 rounded-3xl blur-xl opacity-70 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse-subtle" />
 
               {/* Main Card */}
-              <div className="relative rounded-2xl bg-dark-surface/90 dark:bg-dark-surface/90 bg-white border border-dark-border dark:border-dark-border border-slate-200 p-7 shadow-2xl backdrop-blur-xl">
+              <div className="relative rounded-2xl bg-dark-surface/90 dark:bg-dark-surface/90 bg-white border border-dark-border dark:border-dark-border border-slate-200 p-5 sm:p-7 shadow-2xl backdrop-blur-xl">
                 
                 {/* Header of card with badges */}
-                <div className="flex items-center justify-between border-b border-dark-border/80 dark:border-dark-border/80 border-slate-100 pb-5 mb-6">
+                <div className="flex items-center justify-between border-b border-dark-border/80 dark:border-dark-border/80 border-slate-100 pb-4 sm:pb-5 mb-5 sm:mb-6">
                   <div className="flex items-center space-x-2">
                     <span className="w-3 h-3 rounded-full bg-red-500/80 inline-block" />
                     <span className="w-3 h-3 rounded-full bg-yellow-500/80 inline-block" />
@@ -216,19 +216,19 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
                 </div>
 
                 {/* Center Profile Branding Insignia */}
-                <div className="flex flex-col items-center text-center my-3">
-                  <div className="relative w-48 h-48 sm:w-52 sm:h-52 rounded-full p-1.5 bg-gradient-to-br from-primary via-blue-400 to-secondary shadow-2xl mb-4 group transition-transform duration-300 hover:scale-[1.03]">
+                <div className="flex flex-col items-center text-center my-2 sm:my-3">
+                  <div className="relative w-44 h-44 sm:w-52 sm:h-52 rounded-full p-1.5 bg-gradient-to-br from-primary via-blue-400 to-secondary shadow-2xl mb-4 group transition-transform duration-300 hover:scale-[1.03]">
                     <img
                       src="/avatar.png?v=4"
                       alt={profile.name}
                       className="w-full h-full object-cover rounded-full border-2 border-dark-surface dark:border-dark-surface shadow-inner"
                     />
-                    <div className="absolute -bottom-2.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-dark-card border border-primary/50 text-[11px] font-mono text-primary font-bold shadow-lg whitespace-nowrap">
+                    <div className="absolute -bottom-2.5 left-1/2 -translate-x-1/2 px-3.5 sm:px-4 py-1 rounded-full bg-dark-card border border-primary/50 text-[10px] sm:text-[11px] font-mono text-primary font-bold shadow-lg whitespace-nowrap">
                       IoT &bull; CSE
                     </div>
                   </div>
 
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mt-1">
+                  <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mt-1">
                     {profile.name}
                   </h3>
                   <p className="text-xs sm:text-sm font-semibold text-primary mt-1">

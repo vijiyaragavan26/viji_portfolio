@@ -87,7 +87,7 @@ export const AdminLoginModal: React.FC = () => {
                   if (error) setError(null);
                 }}
                 placeholder="Enter admin password"
-                className="w-full px-4 py-3 pr-12 rounded-xl bg-dark-bg dark:bg-dark-bg bg-slate-50 border border-dark-border dark:border-dark-border border-slate-300 focus:border-primary focus:ring-1 focus:ring-primary text-sm font-mono outline-none transition-all placeholder:text-slate-500"
+                className="w-full px-4 py-3 pr-12 rounded-xl bg-dark-bg dark:bg-dark-bg bg-slate-50 border border-dark-border dark:border-dark-border border-slate-300 focus:border-primary focus:ring-1 focus:ring-primary text-base sm:text-sm font-mono outline-none transition-all placeholder:text-slate-500"
                 autoFocus
               />
               <button

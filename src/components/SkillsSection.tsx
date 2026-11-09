@@ -77,12 +77,12 @@ export const SkillsSection: React.FC = () => {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-10 pb-6 border-b border-dark-border/60 dark:border-dark-border/60 border-slate-200">
           
           {/* Category Tabs */}
-          <div className="flex flex-wrap gap-2 w-full sm:w-auto">
+          <div className="flex flex-wrap gap-1.5 sm:gap-2 w-full sm:w-auto">
             {skillCategories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 flex items-center space-x-1.5 ${
+                className={`min-h-[36px] px-3 sm:px-3.5 py-1.5 rounded-xl text-xs font-medium transition-all duration-200 flex items-center space-x-1.5 ${
                   selectedCategory === cat
                     ? 'bg-primary text-dark-bg font-semibold shadow-sm'
                     : 'bg-dark-surface dark:bg-dark-surface bg-white text-dark-muted dark:text-dark-muted text-slate-600 border border-dark-border dark:border-dark-border border-slate-200 hover:text-dark-text dark:hover:text-white'
@@ -94,12 +94,12 @@ export const SkillsSection: React.FC = () => {
           </div>
 
           {/* Proficiency Pill Toggle */}
-          <div className="flex items-center space-x-1 bg-dark-bg/80 dark:bg-dark-bg/80 bg-slate-200/60 p-1 rounded-xl border border-dark-border/60 dark:border-dark-border/60 border-slate-300 w-full sm:w-auto justify-center">
+          <div className="flex items-center space-x-1 bg-dark-bg/80 dark:bg-dark-bg/80 bg-slate-200/60 p-1 rounded-xl border border-dark-border/60 dark:border-dark-border/60 border-slate-300 w-full sm:w-auto justify-center overflow-x-auto no-scrollbar">
             {(['All', 'Comfortable With', 'Currently Learning'] as const).map((prof) => (
               <button
                 key={prof}
                 onClick={() => setProficiencyFilter(prof)}
-                className={`px-3 py-1 rounded-lg text-xs font-medium transition-all ${
+                className={`min-h-[32px] px-2.5 sm:px-3 py-1 rounded-lg text-[11px] sm:text-xs font-medium transition-all whitespace-nowrap ${
                   proficiencyFilter === prof
                     ? 'bg-dark-surface dark:bg-dark-surface bg-white text-primary dark:text-primary shadow-sm font-semibold'
                     : 'text-dark-muted dark:text-dark-muted text-slate-600 hover:text-slate-900 dark:hover:text-white'

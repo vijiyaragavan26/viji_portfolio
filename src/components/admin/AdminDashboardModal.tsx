@@ -178,10 +178,10 @@ export const AdminDashboardModal: React.FC = () => {
         <div className="flex-1 flex flex-col md:flex-row overflow-hidden">
           
           {/* Navigation Sidebar */}
-          <nav className="w-full md:w-60 border-b md:border-b-0 md:border-r border-dark-border dark:border-dark-border border-slate-200 p-3 space-y-1 bg-dark-surface/40 dark:bg-dark-surface/40 bg-slate-50 flex md:flex-col overflow-x-auto md:overflow-x-visible shrink-0">
+          <nav className="w-full md:w-64 border-b md:border-b-0 md:border-r border-dark-border dark:border-dark-border border-slate-200 p-2 sm:p-3 bg-dark-surface/40 dark:bg-dark-surface/40 bg-slate-50 flex md:flex-col gap-1.5 overflow-x-auto md:overflow-x-visible shrink-0 no-scrollbar">
             <button
               onClick={() => setActiveEditorTab('profile')}
-              className={`w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs font-semibold transition-all shrink-0 ${
+              className={`w-auto md:w-full whitespace-nowrap flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs font-semibold transition-all shrink-0 ${
                 activeEditorTab === 'profile'
                   ? 'bg-primary text-dark-bg font-bold shadow-md shadow-primary/20'
                   : 'text-dark-muted hover:text-primary hover:bg-primary/10'
@@ -193,7 +193,7 @@ export const AdminDashboardModal: React.FC = () => {
 
             <button
               onClick={() => setActiveEditorTab('projects')}
-              className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold transition-all shrink-0 ${
+              className={`w-auto md:w-full whitespace-nowrap flex items-center justify-between gap-2.5 px-3 py-2 rounded-xl text-xs font-semibold transition-all shrink-0 ${
                 activeEditorTab === 'projects'
                   ? 'bg-primary text-dark-bg font-bold shadow-md shadow-primary/20'
                   : 'text-dark-muted hover:text-primary hover:bg-primary/10'
@@ -210,7 +210,7 @@ export const AdminDashboardModal: React.FC = () => {
 
             <button
               onClick={() => setActiveEditorTab('skills')}
-              className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold transition-all shrink-0 ${
+              className={`w-auto md:w-full whitespace-nowrap flex items-center justify-between gap-2.5 px-3 py-2 rounded-xl text-xs font-semibold transition-all shrink-0 ${
                 activeEditorTab === 'skills'
                   ? 'bg-primary text-dark-bg font-bold shadow-md shadow-primary/20'
                   : 'text-dark-muted hover:text-primary hover:bg-primary/10'
@@ -227,7 +227,7 @@ export const AdminDashboardModal: React.FC = () => {
 
             <button
               onClick={() => setActiveEditorTab('education')}
-              className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold transition-all shrink-0 ${
+              className={`w-auto md:w-full whitespace-nowrap flex items-center justify-between gap-2.5 px-3 py-2 rounded-xl text-xs font-semibold transition-all shrink-0 ${
                 activeEditorTab === 'education'
                   ? 'bg-primary text-dark-bg font-bold shadow-md shadow-primary/20'
                   : 'text-dark-muted hover:text-primary hover:bg-primary/10'
@@ -244,7 +244,7 @@ export const AdminDashboardModal: React.FC = () => {
 
             <button
               onClick={() => setActiveEditorTab('certificates')}
-              className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold transition-all shrink-0 ${
+              className={`w-auto md:w-full whitespace-nowrap flex items-center justify-between gap-2.5 px-3 py-2 rounded-xl text-xs font-semibold transition-all shrink-0 ${
                 activeEditorTab === 'certificates'
                   ? 'bg-primary text-dark-bg font-bold shadow-md shadow-primary/20'
                   : 'text-dark-muted hover:text-primary hover:bg-primary/10'
@@ -261,7 +261,7 @@ export const AdminDashboardModal: React.FC = () => {
 
             <button
               onClick={() => setActiveEditorTab('learning')}
-              className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold transition-all shrink-0 ${
+              className={`w-auto md:w-full whitespace-nowrap flex items-center justify-between gap-2.5 px-3 py-2 rounded-xl text-xs font-semibold transition-all shrink-0 ${
                 activeEditorTab === 'learning'
                   ? 'bg-primary text-dark-bg font-bold shadow-md shadow-primary/20'
                   : 'text-dark-muted hover:text-primary hover:bg-primary/10'
@@ -276,10 +276,10 @@ export const AdminDashboardModal: React.FC = () => {
               </span>
             </button>
 
-            <div className="pt-2 border-t border-dark-border dark:border-dark-border border-slate-200 mt-2">
+            <div className="md:pt-2 md:border-t border-dark-border dark:border-dark-border border-slate-200 md:mt-2 shrink-0">
               <button
                 onClick={() => setActiveEditorTab('settings')}
-                className={`w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs font-semibold transition-all shrink-0 ${
+                className={`w-auto md:w-full whitespace-nowrap flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs font-semibold transition-all shrink-0 ${
                   activeEditorTab === 'settings'
                     ? 'bg-primary text-dark-bg font-bold shadow-md shadow-primary/20'
                     : 'text-dark-muted hover:text-primary hover:bg-primary/10'

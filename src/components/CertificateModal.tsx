@@ -5,12 +5,8 @@ import {
   ChevronRight,
   ZoomIn,
   ZoomOut,
-  RotateCcw,
   ExternalLink,
-  Award,
   CheckCircle,
-  Sparkles,
-  Info,
 } from 'lucide-react';
 import { CertificateItem } from '../types';
 import { CertificateThumbnail } from './CertificateIllustrations';
@@ -214,14 +210,6 @@ export const CertificateModal: React.FC<CertificateModalProps> = ({
                 </div>
               )}
             </div>
-          </div>
-
-          {/* Original Certificate Image Notice */}
-          <div className="mt-4 pt-3 border-t border-dark-border/50 text-[11px] font-mono text-dark-muted flex items-center space-x-2">
-            <Info size={13} className="text-primary shrink-0" />
-            <span>
-              Tip: Drop individual scanned certificate images into <code className="text-primary">/public/certificates/</code> and set the <code className="text-primary">image</code> path in <code className="text-primary">certificates.ts</code> for instant high-res photo viewing.
-            </span>
           </div>
         </div>
       </div>
