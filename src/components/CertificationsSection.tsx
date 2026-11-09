@@ -193,17 +193,6 @@ export const CertificationsSection: React.FC = () => {
           </div>
         )}
 
-        {/* Reference Image & Original Assets Notice */}
-        <div className="mt-12 p-5 rounded-2xl bg-dark-surface/60 dark:bg-dark-surface/60 bg-slate-100 border border-dark-border/70 dark:border-dark-border/70 border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 max-w-4xl mx-auto">
-          <div className="text-xs text-dark-muted dark:text-dark-muted text-slate-600 leading-relaxed text-center sm:text-left">
-            <strong className="text-slate-900 dark:text-white">Authentic Credentials:</strong>{' '}
-            Derived from official course verifications and certificate records. Individual high-resolution certificate files can be loaded by placing files in <code className="text-primary font-mono">/public/certificates/</code>.
-          </div>
-          <div className="text-xs font-mono text-primary font-bold shrink-0">
-            Total Verified: {certificates.length} Entries
-          </div>
-        </div>
-
       </div>
 
       {/* Certificate Viewer Modal */}
