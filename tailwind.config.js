@@ -9,32 +9,32 @@ export default {
     extend: {
       colors: {
         dark: {
-          bg: '#080B12',
-          surface: '#101522',
-          card: '#141B2D',
-          border: '#1E293B',
-          text: '#F8FAFC',
-          muted: '#94A3B8',
+          bg: '#0B0507',
+          surface: '#140A0E',
+          card: '#1A0E13',
+          border: '#2E151E',
+          text: '#FFFFFF',
+          muted: '#CBD5E1',
         },
         light: {
-          bg: '#F8FAFC',
-          surface: '#FFFFFF',
-          card: '#F1F5F9',
-          border: '#E2E8F0',
-          text: '#0F172A',
-          muted: '#64748B',
+          bg: '#FFFFFF',
+          surface: '#FAFAFA',
+          card: '#F4F4F5',
+          border: '#E4E4E7',
+          text: '#09090B',
+          muted: '#71717A',
         },
         primary: {
-          DEFAULT: '#60A5FA', // Blue accent
-          hover: '#3B82F6',
-          light: '#93C5FD',
-          dark: '#2563EB',
+          DEFAULT: '#EF4444', // Crimson Red
+          hover: '#DC2626',   // Deep Red
+          light: '#F87171',   // Light Red
+          dark: '#B91C1C',    // Dark Red
         },
         secondary: {
-          DEFAULT: '#A78BFA', // Purple accent
-          hover: '#8B5CF6',
-          light: '#C4B5FD',
-          dark: '#7C3AED',
+          DEFAULT: '#F43F5E', // Rose Red
+          hover: '#E11D48',   // Deep Rose
+          light: '#FB7185',   // Light Rose
+          dark: '#BE123C',    // Dark Rose
         },
       },
       fontFamily: {

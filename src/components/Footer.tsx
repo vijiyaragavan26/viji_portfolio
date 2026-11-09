@@ -34,16 +34,16 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="relative bg-[#020b14] border-t border-cyan-500/20 text-slate-300 transition-colors">
+    <footer className="relative bg-[#0B0507] border-t border-red-500/20 text-slate-300 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         
         {/* Main Footer Grid with distinct spacing */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-cyan-500/15">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-red-500/15">
           
           {/* Column 1: Brand & Profile Info (5 cols) */}
           <div className="md:col-span-5 flex flex-col items-start space-y-4">
             <div className="flex items-center space-x-3.5">
-              <div className="w-11 h-11 rounded-full overflow-hidden border-2 border-cyan-400/50 shadow-md ring-2 ring-cyan-400/20 shrink-0">
+              <div className="w-11 h-11 rounded-full overflow-hidden border-2 border-red-500/50 shadow-md ring-2 ring-red-500/20 shrink-0">
                 <img
                   src="/avatar.png?v=4"
                   alt={profile.name}
@@ -54,7 +54,7 @@ export const Footer: React.FC = () => {
                 <span className="font-bold text-lg tracking-tight text-white block">
                   {profile.name}
                 </span>
-                <span className="font-mono text-xs text-cyan-400 font-semibold block">
+                <span className="font-mono text-xs text-red-400 font-semibold block">
                   {profile.roles?.[0] || 'B.E - CSE Student'}
                 </span>
               </div>
@@ -67,7 +67,7 @@ export const Footer: React.FC = () => {
 
           {/* Column 2: Quick Links 2-column clean grid (4 cols) */}
           <div className="md:col-span-4">
-            <span className="block text-[11px] font-mono font-semibold tracking-wider text-cyan-400 uppercase mb-4">
+            <span className="block text-[11px] font-mono font-semibold tracking-wider text-red-400 uppercase mb-4">
               QUICK DIRECTORY
             </span>
             <div className="grid grid-cols-2 gap-x-6 gap-y-2.5">
@@ -76,9 +76,9 @@ export const Footer: React.FC = () => {
                   key={link.name}
                   href={link.href}
                   onClick={(e) => handleLinkClick(e, link.href)}
-                  className="text-xs text-slate-400 hover:text-cyan-400 transition-colors flex items-center gap-1.5"
+                  className="text-xs text-slate-400 hover:text-red-400 transition-colors flex items-center gap-1.5"
                 >
-                  <span className="text-cyan-500/50 text-[10px]">&bull;</span>
+                  <span className="text-red-500/50 text-[10px]">&bull;</span>
                   <span>{link.name}</span>
                 </a>
               ))}
@@ -88,7 +88,7 @@ export const Footer: React.FC = () => {
           {/* Column 3: Connect & Top Button (3 cols) */}
           <div className="md:col-span-3 flex flex-col items-start md:items-end justify-between space-y-4">
             <div>
-              <span className="block text-[11px] font-mono font-semibold tracking-wider text-cyan-400 uppercase mb-4 md:text-right">
+              <span className="block text-[11px] font-mono font-semibold tracking-wider text-red-400 uppercase mb-4 md:text-right">
                 CHANNELS &amp; SOCIAL
               </span>
               <div className="flex items-center gap-2.5 flex-wrap">
@@ -97,7 +97,7 @@ export const Footer: React.FC = () => {
                     href={profile.social.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2.5 rounded-xl border border-cyan-500/25 bg-[#04121e] text-slate-400 hover:text-cyan-400 hover:border-cyan-400 transition-all duration-200"
+                    className="p-2.5 rounded-xl border border-red-500/25 bg-[#140A0E] text-slate-400 hover:text-red-400 hover:border-red-400 transition-all duration-200"
                     aria-label="GitHub Profile"
                   >
                     <GithubIcon size={16} />
@@ -108,7 +108,7 @@ export const Footer: React.FC = () => {
                     href={profile.social.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2.5 rounded-xl border border-cyan-500/25 bg-[#04121e] text-slate-400 hover:text-cyan-400 hover:border-cyan-400 transition-all duration-200"
+                    className="p-2.5 rounded-xl border border-red-500/25 bg-[#140A0E] text-slate-400 hover:text-red-400 hover:border-red-400 transition-all duration-200"
                     aria-label="LinkedIn Profile"
                   >
                     <LinkedinIcon size={16} />
@@ -117,7 +117,7 @@ export const Footer: React.FC = () => {
                 {profile.social.email && (
                   <a
                     href={`mailto:${profile.social.email}`}
-                    className="p-2.5 rounded-xl border border-cyan-500/25 bg-[#04121e] text-slate-400 hover:text-cyan-400 hover:border-cyan-400 transition-all duration-200"
+                    className="p-2.5 rounded-xl border border-red-500/25 bg-[#140A0E] text-slate-400 hover:text-red-400 hover:border-red-400 transition-all duration-200"
                     aria-label="Send Email"
                   >
                     <Mail size={16} />
@@ -128,7 +128,7 @@ export const Footer: React.FC = () => {
                     href={`https://wa.me/${profile.social.whatsapp.replace(/[^0-9]/g, '')}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2.5 rounded-xl border border-cyan-500/25 bg-[#04121e] text-slate-400 hover:text-emerald-400 hover:border-emerald-400 transition-all duration-200"
+                    className="p-2.5 rounded-xl border border-red-500/25 bg-[#140A0E] text-slate-400 hover:text-emerald-400 hover:border-emerald-400 transition-all duration-200"
                     aria-label="WhatsApp Contact"
                   >
                     <WhatsappIcon size={16} />
@@ -136,7 +136,7 @@ export const Footer: React.FC = () => {
                 )}
                 <button
                   onClick={scrollToTop}
-                  className="p-2.5 rounded-xl border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 hover:bg-cyan-500/20 hover:border-cyan-400 transition-all duration-200 ml-1"
+                  className="p-2.5 rounded-xl border border-red-500/30 bg-red-500/10 text-red-400 hover:bg-red-500/20 hover:border-red-400 transition-all duration-200 ml-1"
                   title="Scroll back to top"
                   aria-label="Scroll back to top"
                 >
@@ -176,7 +176,7 @@ export const Footer: React.FC = () => {
             ) : (
               <button
                 onClick={() => setIsLoginModalOpen(true)}
-                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl border border-cyan-500/30 text-slate-400 hover:text-cyan-400 hover:border-cyan-400 hover:bg-cyan-500/10 transition-colors font-mono text-[11px]"
+                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl border border-red-500/30 text-slate-400 hover:text-red-400 hover:border-red-400 hover:bg-red-500/10 transition-colors font-mono text-[11px]"
                 title="Admin Login (CRUD Portal)"
               >
                 <Lock size={12} />

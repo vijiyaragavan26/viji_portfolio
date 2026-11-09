@@ -134,7 +134,7 @@ export const SkillsSection: React.FC = () => {
                     className={`inline-flex items-center text-[10px] font-mono px-2 py-0.5 rounded-full border ${
                       skill.proficiency === 'Comfortable With'
                         ? 'border-emerald-500/30 text-emerald-400 bg-emerald-500/10'
-                        : 'border-blue-500/30 text-blue-400 bg-blue-500/10'
+                        : 'border-rose-500/30 text-rose-400 bg-rose-500/10'
                     }`}
                   >
                     {skill.proficiency === 'Comfortable With' ? (

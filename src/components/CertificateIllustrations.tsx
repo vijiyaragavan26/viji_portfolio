@@ -18,16 +18,16 @@ export const CertificateThumbnail: React.FC<CertificateThumbnailProps> = ({
   const getBadgeIcon = () => {
     switch (certificate.iconType) {
       case 'ai':
-        return <Sparkles className="w-8 h-8 text-purple-400" />;
+        return <Sparkles className="w-8 h-8 text-rose-500" />;
       case 'code':
         return <Code className="w-8 h-8 text-emerald-400" />;
       case 'security':
-        return <ShieldCheck className="w-8 h-8 text-red-400" />;
+        return <ShieldCheck className="w-8 h-8 text-red-500" />;
       case 'tools':
         return <Terminal className="w-8 h-8 text-amber-400" />;
       case 'workshop':
       default:
-        return <Award className="w-8 h-8 text-blue-400" />;
+        return <Award className="w-8 h-8 text-red-500" />;
     }
   };
 

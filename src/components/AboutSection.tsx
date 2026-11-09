@@ -20,13 +20,13 @@ export const AboutSection: React.FC = () => {
   const getFeatureIcon = (iconName: string) => {
     switch (iconName) {
       case 'code':
-        return <Code className="w-6 h-6 text-blue-400" />;
+        return <Code className="w-6 h-6 text-red-500" />;
       case 'sparkles':
-        return <Sparkles className="w-6 h-6 text-purple-400" />;
+        return <Sparkles className="w-6 h-6 text-rose-500" />;
       case 'cpu':
         return <Cpu className="w-6 h-6 text-emerald-400" />;
       default:
-        return <Code className="w-6 h-6 text-blue-400" />;
+        return <Code className="w-6 h-6 text-red-500" />;
     }
   };
 
@@ -139,7 +139,7 @@ export const AboutSection: React.FC = () => {
               </div>
 
               <div className="p-5 rounded-xl bg-dark-bg/60 dark:bg-dark-bg/60 bg-white border border-dark-border/60 dark:border-dark-border/60 border-slate-200">
-                <div className="flex items-center space-x-2 text-blue-400 font-semibold text-sm mb-2">
+                <div className="flex items-center space-x-2 text-red-500 font-semibold text-sm mb-2">
                   <Sparkles size={16} />
                   <span>Current Aspirations</span>
                 </div>

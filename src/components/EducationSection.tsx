@@ -47,7 +47,7 @@ export const EducationSection: React.FC = () => {
               className="relative rounded-2xl bg-dark-surface/90 dark:bg-dark-surface/90 bg-white border border-dark-border dark:border-dark-border border-slate-200 p-7 sm:p-10 shadow-xl overflow-hidden"
             >
               {/* Decorative accent top bar */}
-              <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-primary via-secondary to-blue-500" />
+              <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-red-600 via-rose-500 to-red-500" />
 
               {/* Title & Institute Header */}
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">

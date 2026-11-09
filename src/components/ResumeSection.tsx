@@ -61,7 +61,7 @@ export const ResumeSection: React.FC<ResumeSectionProps> = ({ onOpenResumeModal 
             <div className="flex items-center">
               <button
                 onClick={onOpenResumeModal}
-                className="w-full sm:w-auto px-6 py-3.5 rounded-xl text-xs sm:text-sm font-semibold bg-gradient-to-r from-primary to-blue-600 hover:from-primary-hover hover:to-blue-700 text-slate-950 shadow-md shadow-primary/20 flex items-center justify-center space-x-2 transition-all cursor-pointer"
+                className="w-full sm:w-auto px-6 py-3.5 rounded-xl text-xs sm:text-sm font-semibold bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white shadow-md shadow-red-500/25 flex items-center justify-center space-x-2 transition-all cursor-pointer"
               >
                 <FileText size={16} />
                 <span>View Full CV</span>
@@ -72,7 +72,7 @@ export const ResumeSection: React.FC<ResumeSectionProps> = ({ onOpenResumeModal 
           {/* Quick Snapshot Metrics */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 py-8 border-b border-dark-border/80 dark:border-dark-border/80 border-slate-200">
             <div className="flex items-start space-x-3">
-              <div className="p-2.5 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400">
+              <div className="p-2.5 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400">
                 <GraduationCap size={20} />
               </div>
               <div>
@@ -85,7 +85,7 @@ export const ResumeSection: React.FC<ResumeSectionProps> = ({ onOpenResumeModal 
             </div>
 
             <div className="flex items-start space-x-3">
-              <div className="p-2.5 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400">
+              <div className="p-2.5 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-400">
                 <Layers size={20} />
               </div>
               <div>

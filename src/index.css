@@ -4,12 +4,12 @@
 
 @layer base {
   :root {
-    --bg-main: #080B12;
-    --bg-surface: #101522;
-    --accent-primary: #60A5FA;
-    --accent-secondary: #A78BFA;
-    --text-primary: #F8FAFC;
-    --text-secondary: #94A3B8;
+    --bg-main: #0B0507;
+    --bg-surface: #140A0E;
+    --accent-primary: #EF4444;
+    --accent-secondary: #F43F5E;
+    --text-primary: #FFFFFF;
+    --text-secondary: #CBD5E1;
   }
 
   html {

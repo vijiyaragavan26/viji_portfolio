@@ -27,7 +27,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenDetails
       case 'Completed':
         return 'text-emerald-400 border-emerald-500/30 bg-emerald-500/10';
       case 'In Progress':
-        return 'text-blue-400 border-blue-500/30 bg-blue-500/10';
+        return 'text-rose-400 border-rose-500/30 bg-rose-500/10';
       case 'Concept':
       default:
         return 'text-amber-400 border-amber-500/30 bg-amber-500/10';

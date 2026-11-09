@@ -55,7 +55,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
       {/* Ambient background animated blobs */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-primary/15 rounded-full blur-[140px] pointer-events-none animate-blob" />
       <div className="absolute top-1/3 right-10 w-[420px] h-[420px] bg-secondary/15 rounded-full blur-[120px] pointer-events-none animate-blob [animation-delay:4s]" />
-      <div className="absolute bottom-20 left-10 w-[350px] h-[350px] bg-blue-500/10 rounded-full blur-[110px] pointer-events-none animate-blob [animation-delay:7s]" />
+      <div className="absolute bottom-20 left-10 w-[350px] h-[350px] bg-red-600/10 rounded-full blur-[110px] pointer-events-none animate-blob [animation-delay:7s]" />
       
       {/* Subtle grid pattern */}
       <div 
@@ -91,7 +91,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-dark-text leading-[1.12] mb-4">
               Building the Future with{' '}
-              <span className="bg-gradient-to-r from-primary via-blue-400 to-secondary bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-red-500 via-rose-400 to-red-600 bg-clip-text text-transparent">
                 Code, AI & IoT.
               </span>
             </h1>
@@ -120,7 +120,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
               <a
                 href="#projects"
                 onClick={(e) => scrollToSection(e, 'projects')}
-                className="w-full sm:w-auto px-6 py-3.5 rounded-xl font-semibold text-sm bg-gradient-to-r from-primary to-blue-600 hover:from-primary-hover hover:to-blue-700 text-slate-950 shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all duration-200 text-center"
+                className="w-full sm:w-auto px-6 py-3.5 rounded-xl font-semibold text-sm bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white shadow-lg shadow-red-500/25 hover:shadow-red-500/40 transition-all duration-200 text-center"
               >
                 Explore My Projects
               </a>
@@ -217,7 +217,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
 
                 {/* Center Profile Branding Insignia */}
                 <div className="flex flex-col items-center text-center my-2 sm:my-3">
-                  <div className="relative w-44 h-44 sm:w-52 sm:h-52 rounded-full p-1.5 bg-gradient-to-br from-primary via-blue-400 to-secondary shadow-2xl mb-4 group transition-transform duration-300 hover:scale-[1.03]">
+                  <div className="relative w-44 h-44 sm:w-52 sm:h-52 rounded-full p-1.5 bg-gradient-to-br from-red-500 via-rose-400 to-red-600 shadow-2xl mb-4 group transition-transform duration-300 hover:scale-[1.03]">
                     <img
                       src="/avatar.png?v=4"
                       alt={profile.name}

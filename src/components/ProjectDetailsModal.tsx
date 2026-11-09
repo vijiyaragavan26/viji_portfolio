@@ -36,7 +36,7 @@ export const ProjectDetailsModal: React.FC<ProjectDetailsModalProps> = ({ projec
         );
       case 'In Progress':
         return (
-          <span className="inline-flex items-center text-xs px-2.5 py-1 rounded-full border border-blue-500/30 text-blue-400 bg-blue-500/10 font-mono">
+          <span className="inline-flex items-center text-xs px-2.5 py-1 rounded-full border border-rose-500/30 text-rose-400 bg-rose-500/10 font-mono">
             <Clock size={12} className="mr-1.5" />
             In Progress
           </span>
