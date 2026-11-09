@@ -513,14 +513,6 @@ export const TechHeroVisual: React.FC<TechHeroVisualProps> = ({ className = '' }
         </motion.div>
 
       </div>
-
-      {/* Floating Status / Interactive Pill at Bottom */}
-      <div className="mt-3 text-center">
-        <span className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-slate-900/60 border border-primary/30 text-[11px] font-mono text-dark-muted backdrop-blur-md shadow-sm">
-          <span className="w-1.5 h-1.5 rounded-full bg-primary animate-ping" />
-          <span>Interactive 3D Tech Core &bull; Hover badges</span>
-        </span>
-      </div>
     </div>
   );
 };

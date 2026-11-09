@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { aboutFeatures } from '../data/profile';
 import { usePortfolioData } from '../context/DataContext';
+import { ProfileCard } from './ProfileCard';
 
 export const AboutSection: React.FC = () => {
   const { profile } = usePortfolioData();
@@ -38,17 +39,53 @@ export const AboutSection: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-mono font-medium mb-3">
-            <span>ABOUT ME</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-dark-text tracking-tight mb-4">
-            {profile.aboutHeading}
-          </h2>
-          <p className="text-base sm:text-lg text-dark-muted dark:text-dark-muted text-slate-600 leading-relaxed">
-            {profile.aboutText}
-          </p>
+        {/* Spotlight: Profile Card + About Me Narrative */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-16">
+          {/* Left Column: Dedicated Profile Card */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            className="lg:col-span-5 flex justify-center"
+          >
+            <ProfileCard />
+          </motion.div>
+
+          {/* Right Column: About Narrative & Metrics */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            className="lg:col-span-7 flex flex-col justify-center text-left"
+          >
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-mono font-medium mb-3 w-fit">
+              <span>ABOUT ME</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-dark-text tracking-tight mb-4">
+              {profile.aboutHeading}
+            </h2>
+            <p className="text-base sm:text-lg text-dark-muted dark:text-dark-muted text-slate-600 leading-relaxed mb-6">
+              {profile.aboutText}
+            </p>
+
+            {/* Quick Metrics / Badges */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              <div className="p-3.5 rounded-xl bg-dark-surface/60 dark:bg-dark-surface/60 bg-slate-50 border border-dark-border dark:border-dark-border border-slate-200">
+                <div className="text-xl font-extrabold text-primary">8.70</div>
+                <div className="text-xs text-dark-muted">CGPA / 10.0</div>
+              </div>
+              <div className="p-3.5 rounded-xl bg-dark-surface/60 dark:bg-dark-surface/60 bg-slate-50 border border-dark-border dark:border-dark-border border-slate-200">
+                <div className="text-xl font-extrabold text-secondary">2nd Year</div>
+                <div className="text-xs text-dark-muted">B.E CSE (IoT)</div>
+              </div>
+              <div className="p-3.5 rounded-xl bg-dark-surface/60 dark:bg-dark-surface/60 bg-slate-50 border border-dark-border dark:border-dark-border border-slate-200 col-span-2 sm:col-span-1">
+                <div className="text-xl font-extrabold text-emerald-400">10+</div>
+                <div className="text-xs text-dark-muted">Projects Built</div>
+              </div>
+            </div>
+          </motion.div>
         </div>
 
         {/* 3 Core Pillar Feature Cards */}
