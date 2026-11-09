@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Send, Sun, Moon } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext';
+import { Send } from 'lucide-react';
 import { usePortfolioData } from '../context/DataContext';
 
 interface NavbarProps {
@@ -26,7 +25,6 @@ const navLinks: NavItem[] = [
 
 export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal }) => {
   const { profile } = usePortfolioData();
-  const { theme, toggleTheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
@@ -143,37 +141,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal }) => {
               </a>
             );
           })}
-
-          {/* Desktop Red & White Theme Toggle */}
-          <button
-            onClick={toggleTheme}
-            className="ml-2 p-2 rounded-xl border border-primary/30 text-dark-text dark:text-dark-text text-slate-700 hover:text-primary hover:border-primary hover:bg-primary/10 transition-all duration-200"
-            title={theme === 'dark' ? 'Switch to Crisp White & Red mode' : 'Switch to Dark & Red mode'}
-            aria-label="Toggle theme mode"
-          >
-            {theme === 'dark' ? (
-              <Sun className="w-4 h-4 text-amber-400" />
-            ) : (
-              <Moon className="w-4 h-4 text-primary" />
-            )}
-          </button>
         </nav>
 
-        {/* Mobile Controls: Theme Toggle & Hamburger */}
+        {/* Mobile Controls: Hamburger Toggle Button */}
         <div className="lg:hidden flex items-center gap-2">
-          <button
-            onClick={toggleTheme}
-            className="p-2.5 rounded-xl text-slate-900 dark:text-dark-text hover:bg-dark-surface dark:hover:bg-dark-surface transition-colors border border-primary/20"
-            title={theme === 'dark' ? 'Switch to Crisp White & Red mode' : 'Switch to Dark & Red mode'}
-            aria-label="Toggle theme mode"
-          >
-            {theme === 'dark' ? (
-              <Sun className="w-4 h-4 text-amber-400" />
-            ) : (
-              <Moon className="w-4 h-4 text-primary" />
-            )}
-          </button>
-
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-2.5 rounded-xl text-slate-900 dark:text-dark-text hover:bg-dark-surface dark:hover:bg-dark-surface transition-colors border border-primary/20"
