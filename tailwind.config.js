@@ -46,6 +46,9 @@ export default {
         'float-slow': 'float 8s ease-in-out infinite reverse',
         'blob': 'blob 10s infinite',
         'shimmer': 'shimmer 2.5s linear infinite',
+        'waving-hand': 'wave 2s infinite',
+        'glow-pulse': 'glow 3s ease-in-out infinite',
+        'gradient-x': 'gradient-x 6s ease infinite',
       },
       keyframes: {
         float: {
@@ -60,6 +63,19 @@ export default {
         shimmer: {
           '0%': { backgroundPosition: '-200% 0' },
           '100%': { backgroundPosition: '200% 0' },
+        },
+        wave: {
+          '0%, 100%': { transform: 'rotate(0deg)' },
+          '20%, 60%': { transform: 'rotate(14deg)' },
+          '40%, 80%': { transform: 'rotate(-10deg)' },
+        },
+        glow: {
+          '0%, 100%': { opacity: '0.6', filter: 'drop-shadow(0 0 15px rgba(239, 68, 68, 0.4))' },
+          '50%': { opacity: '1', filter: 'drop-shadow(0 0 30px rgba(239, 68, 68, 0.75))' },
+        },
+        'gradient-x': {
+          '0%, 100%': { 'background-size': '200% 200%', 'background-position': 'left center' },
+          '50%': { 'background-size': '200% 200%', 'background-position': 'right center' },
         },
       }
     },

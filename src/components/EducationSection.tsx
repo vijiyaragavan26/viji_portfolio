@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import {
   GraduationCap,
   Calendar,
@@ -41,10 +42,15 @@ export const EducationSection: React.FC = () => {
 
         {/* Education Timeline Card */}
         <div className="max-w-4xl mx-auto space-y-8">
-          {education.map((edu) => (
-            <div
+          {education.map((edu, idx) => (
+            <motion.div
               key={edu.id}
-              className="relative rounded-2xl bg-dark-surface/90 dark:bg-dark-surface/90 bg-white border border-dark-border dark:border-dark-border border-slate-200 p-7 sm:p-10 shadow-xl overflow-hidden"
+              initial={{ opacity: 0, y: 35 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.6, delay: idx * 0.15, ease: 'easeOut' }}
+              whileHover={{ y: -4, transition: { duration: 0.2 } }}
+              className="relative rounded-2xl bg-dark-surface/90 dark:bg-dark-surface/90 bg-white border border-dark-border dark:border-dark-border border-slate-200 p-7 sm:p-10 shadow-xl overflow-hidden cursor-default"
             >
               {/* Decorative accent top bar */}
               <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-red-600 via-rose-500 to-red-500" />
@@ -143,7 +149,7 @@ export const EducationSection: React.FC = () => {
                 </ul>
               </div>
 
-            </div>
+            </motion.div>
           ))}
         </div>
 

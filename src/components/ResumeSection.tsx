@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import {
   FileText,
   Printer,
@@ -38,7 +39,13 @@ export const ResumeSection: React.FC<ResumeSectionProps> = ({ onOpenResumeModal 
         </div>
 
         {/* Resume Preview Banner Card */}
-        <div className="max-w-4xl mx-auto rounded-3xl bg-dark-surface/90 dark:bg-dark-surface/90 bg-white border border-dark-border dark:border-dark-border border-slate-200 p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+        <motion.div
+          initial={{ opacity: 0, y: 35 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          className="max-w-4xl mx-auto rounded-3xl bg-dark-surface/90 dark:bg-dark-surface/90 bg-white border border-dark-border dark:border-dark-border border-slate-200 p-8 sm:p-12 shadow-2xl relative overflow-hidden"
+        >
           
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 border-b border-dark-border/80 dark:border-dark-border/80 border-slate-200">
             <div>
@@ -124,7 +131,7 @@ export const ResumeSection: React.FC<ResumeSectionProps> = ({ onOpenResumeModal 
             </button>
           </div>
 
-        </div>
+        </motion.div>
 
       </div>
     </section>

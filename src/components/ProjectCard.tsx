@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { ExternalLink, ArrowRight, ShoppingBag, Bot, Database } from 'lucide-react';
 import { GithubIcon } from './SocialIcons';
 import { ProjectItem } from '../types';
@@ -12,9 +13,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenDetails
   const getProjectIcon = (iconName: string) => {
     switch (iconName) {
       case 'shopping-bag':
-        return <ShoppingBag className="w-8 h-8 text-orange-400" />;
+        return <ShoppingBag className="w-8 h-8 text-red-500" />;
       case 'bot':
-        return <Bot className="w-8 h-8 text-blue-400" />;
+        return <Bot className="w-8 h-8 text-rose-500" />;
       case 'database':
         return <Database className="w-8 h-8 text-emerald-400" />;
       default:
@@ -35,7 +36,14 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenDetails
   };
 
   return (
-    <div className="group rounded-2xl bg-dark-surface/90 dark:bg-dark-surface/90 bg-white border border-dark-border dark:border-dark-border border-slate-200 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-primary/10">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-30px' }}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
+      whileHover={{ y: -8, transition: { duration: 0.25 } }}
+      className="group rounded-2xl bg-dark-surface/90 dark:bg-dark-surface/90 bg-white border border-dark-border dark:border-dark-border border-slate-200 hover:border-primary/50 transition-colors flex flex-col justify-between overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-primary/10 cursor-default"
+    >
       {/* Visual Header / Banner Illustration */}
       <div className={`relative h-44 w-full bg-gradient-to-br ${project.gradient} p-6 flex flex-col justify-between border-b border-dark-border/60 dark:border-dark-border/60 border-slate-100 overflow-hidden`}>
         {/* Subtle grid in thumbnail */}
@@ -142,6 +150,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenDetails
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };

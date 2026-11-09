@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import {
   Code,
   Server,
@@ -114,10 +115,15 @@ export const SkillsSection: React.FC = () => {
 
         {/* Skills Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {filteredSkills.map((skill) => (
-            <div
+          {filteredSkills.map((skill, index) => (
+            <motion.div
               key={skill.name}
-              className="group p-5 rounded-xl bg-dark-surface/80 dark:bg-dark-surface/80 bg-white border border-dark-border dark:border-dark-border border-slate-200 hover:border-primary/40 transition-all duration-200 shadow-sm hover:shadow-md flex flex-col justify-between"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-20px' }}
+              transition={{ duration: 0.35, delay: (index % 6) * 0.08 }}
+              whileHover={{ y: -4, scale: 1.02, transition: { duration: 0.2 } }}
+              className="group p-5 rounded-xl bg-dark-surface/80 dark:bg-dark-surface/80 bg-white border border-dark-border dark:border-dark-border border-slate-200 hover:border-primary/50 transition-colors shadow-sm hover:shadow-lg hover:shadow-primary/5 flex flex-col justify-between cursor-default"
             >
               <div>
                 <div className="flex items-center justify-between mb-3">
@@ -161,7 +167,7 @@ export const SkillsSection: React.FC = () => {
                   {skill.description}
                 </p>
               )}
-            </div>
+            </motion.div>
           ))}
         </div>
 

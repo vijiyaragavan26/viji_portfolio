@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import {
   Code,
   Sparkles,
@@ -53,13 +54,18 @@ export const AboutSection: React.FC = () => {
         {/* 3 Core Pillar Feature Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {aboutFeatures.map((feature, idx) => (
-            <div
+            <motion.div
               key={feature.title}
-              className="group relative rounded-2xl bg-dark-surface/70 dark:bg-dark-surface/70 bg-white border border-dark-border dark:border-dark-border border-slate-200 p-8 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-primary/10 flex flex-col justify-between"
+              initial={{ opacity: 0, y: 35 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.5, delay: idx * 0.15, ease: 'easeOut' }}
+              whileHover={{ y: -6, transition: { duration: 0.2 } }}
+              className="group relative rounded-2xl bg-dark-surface/70 dark:bg-dark-surface/70 bg-white border border-dark-border dark:border-dark-border border-slate-200 p-6 sm:p-8 hover:border-primary/50 transition-colors shadow-sm hover:shadow-2xl hover:shadow-primary/10 flex flex-col justify-between cursor-default"
             >
               <div>
                 <div
-                  className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${feature.gradient} border ${feature.borderColor} flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300 shadow-sm`}
+                  className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${feature.gradient} border ${feature.borderColor} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-sm`}
                 >
                   {getFeatureIcon(feature.icon)}
                 </div>
@@ -75,7 +81,7 @@ export const AboutSection: React.FC = () => {
                 <span>Pillar 0{idx + 1}</span>
                 <span className="text-primary font-semibold">&bull; Active Track</span>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 

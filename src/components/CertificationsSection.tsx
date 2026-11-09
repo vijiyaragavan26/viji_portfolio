@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import {
   Search,
   Award,
@@ -104,9 +105,14 @@ export const CertificationsSection: React.FC = () => {
             const globalIndex = certificates.findIndex((c: CertificateItem) => c.id === cert.id);
 
             return (
-              <div
+              <motion.div
                 key={cert.id}
-                className="group rounded-2xl bg-dark-surface/85 dark:bg-dark-surface/85 bg-white border border-dark-border dark:border-dark-border border-slate-200 hover:border-primary/40 transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-primary/10"
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-20px' }}
+                transition={{ duration: 0.45, delay: (index % 6) * 0.08, ease: 'easeOut' }}
+                whileHover={{ y: -6, transition: { duration: 0.2 } }}
+                className="group rounded-2xl bg-dark-surface/85 dark:bg-dark-surface/85 bg-white border border-dark-border dark:border-dark-border border-slate-200 hover:border-primary/50 transition-colors flex flex-col justify-between overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-primary/10 cursor-default"
               >
                 {/* Visual Thumbnail */}
                 <div className="relative p-3 bg-dark-bg/60 dark:bg-dark-bg/60 bg-slate-100/70 border-b border-dark-border/60 dark:border-dark-border/60 border-slate-200">
@@ -175,7 +181,7 @@ export const CertificationsSection: React.FC = () => {
                     )}
                   </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import {
   ArrowDown,
   Mail,
@@ -6,8 +7,6 @@ import {
   Sparkles,
   Cpu,
   Code2,
-  Terminal,
-  CheckCircle2,
 } from 'lucide-react';
 import { GithubIcon, LinkedinIcon, WhatsappIcon } from './SocialIcons';
 import { usePortfolioData } from '../context/DataContext';
@@ -70,16 +69,26 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
           {/* Left Column: Text & Hero Content */}
-          <div className="lg:col-span-7 flex flex-col items-start text-left">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
+            className="lg:col-span-7 flex flex-col items-start text-left"
+          >
             
             {/* Availability Badge */}
             {profile.availability.status && (
-              <div className="inline-flex items-center space-x-2.5 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-xs font-medium mb-6 backdrop-blur-sm shadow-sm">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="inline-flex items-center space-x-2.5 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-xs font-medium mb-6 backdrop-blur-sm shadow-sm"
+              >
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping inline-block" />
                 <span className="text-emerald-500 dark:text-emerald-400 font-medium">
                   {profile.availability.label}
                 </span>
-              </div>
+              </motion.div>
             )}
 
             {/* Greeting */}
@@ -117,30 +126,36 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
 
             {/* Primary Action Buttons */}
             <div className="flex flex-wrap gap-4 items-center mb-10 w-full sm:w-auto">
-              <a
+              <motion.a
+                whileHover={{ scale: 1.04, y: -2 }}
+                whileTap={{ scale: 0.96 }}
                 href="#projects"
                 onClick={(e) => scrollToSection(e, 'projects')}
-                className="w-full sm:w-auto px-6 py-3.5 rounded-xl font-semibold text-sm bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white shadow-lg shadow-red-500/25 hover:shadow-red-500/40 transition-all duration-200 text-center"
+                className="w-full sm:w-auto px-6 py-3.5 rounded-xl font-semibold text-sm bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white shadow-lg shadow-red-500/25 hover:shadow-red-500/40 transition-all duration-200 text-center cursor-pointer"
               >
                 Explore My Projects
-              </a>
+              </motion.a>
 
-              <button
+              <motion.button
+                whileHover={{ scale: 1.04, y: -2 }}
+                whileTap={{ scale: 0.96 }}
                 type="button"
                 onClick={onOpenResumeModal}
                 className="w-full sm:w-auto px-6 py-3.5 rounded-xl font-semibold text-sm border border-primary/30 dark:border-primary/30 border-slate-300 bg-dark-surface/60 dark:bg-dark-surface/60 bg-white text-dark-text dark:text-dark-text text-slate-800 hover:border-primary hover:bg-primary/10 transition-all duration-200 flex items-center justify-center space-x-2 group cursor-pointer shadow-sm"
               >
                 <FileText size={16} className="text-primary group-hover:scale-110 transition-transform" />
                 <span>View CV</span>
-              </button>
+              </motion.button>
 
-              <a
+              <motion.a
+                whileHover={{ scale: 1.04, x: 2 }}
+                whileTap={{ scale: 0.96 }}
                 href="#contact"
                 onClick={(e) => scrollToSection(e, 'contact')}
-                className="w-full sm:w-auto px-6 py-3.5 rounded-xl font-semibold text-sm text-dark-muted dark:text-dark-muted text-slate-600 hover:text-dark-text dark:hover:text-white transition-colors text-center"
+                className="w-full sm:w-auto px-6 py-3.5 rounded-xl font-semibold text-sm text-dark-muted dark:text-dark-muted text-slate-600 hover:text-dark-text dark:hover:text-white transition-colors text-center cursor-pointer"
               >
                 Let&apos;s Connect &rarr;
-              </a>
+              </motion.a>
             </div>
 
             {/* Social Links (only rendered if URL configured) */}
@@ -150,7 +165,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
               </span>
               <div className="flex items-center space-x-3">
                 {profile.social.github && (
-                  <a
+                  <motion.a
+                    whileHover={{ scale: 1.1, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
                     href={profile.social.github}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -158,10 +175,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
                     aria-label="GitHub Profile"
                   >
                     <GithubIcon size={18} />
-                  </a>
+                  </motion.a>
                 )}
                 {profile.social.linkedin && (
-                  <a
+                  <motion.a
+                    whileHover={{ scale: 1.1, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
                     href={profile.social.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -169,19 +188,23 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
                     aria-label="LinkedIn Profile"
                   >
                     <LinkedinIcon size={18} />
-                  </a>
+                  </motion.a>
                 )}
                 {profile.social.email && (
-                  <a
+                  <motion.a
+                    whileHover={{ scale: 1.1, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
                     href={`mailto:${profile.social.email}`}
                     className="p-2.5 rounded-xl border border-dark-border dark:border-dark-border border-slate-200 bg-dark-surface/40 dark:bg-dark-surface/40 bg-slate-50 text-dark-muted dark:text-dark-muted text-slate-600 hover:text-primary hover:border-primary/40 transition-all duration-200"
                     aria-label="Send Email"
                   >
                     <Mail size={18} />
-                  </a>
+                  </motion.a>
                 )}
                 {profile.social.whatsapp && (
-                  <a
+                  <motion.a
+                    whileHover={{ scale: 1.1, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
                     href={`https://wa.me/${profile.social.whatsapp.replace(/[^0-9]/g, '')}`}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -189,19 +212,24 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
                     aria-label="WhatsApp"
                   >
                     <WhatsappIcon size={18} />
-                  </a>
+                  </motion.a>
                 )}
               </div>
             </div>
 
-          </div>
+          </motion.div>
 
           {/* Right Column: Visual Brand Card */}
-          <div className="lg:col-span-5 flex justify-center items-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, y: 30 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+            className="lg:col-span-5 flex justify-center items-center"
+          >
             <div className="relative w-full max-w-md animate-float">
               
               {/* Outer decorative halo */}
-              <div className="absolute -inset-1.5 bg-gradient-to-r from-primary/30 to-secondary/30 rounded-3xl blur-xl opacity-70 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse-subtle" />
+              <div className="absolute -inset-2 bg-gradient-to-r from-red-500/30 via-rose-500/30 to-red-600/30 rounded-3xl blur-2xl opacity-75 animate-glow-pulse" />
 
               {/* Main Card */}
               <div className="relative rounded-2xl bg-dark-surface/90 dark:bg-dark-surface/90 bg-white border border-dark-border dark:border-dark-border border-slate-200 p-5 sm:p-7 shadow-2xl backdrop-blur-xl">
@@ -265,7 +293,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResumeModal }) =
 
               </div>
             </div>
-          </div>
+          </motion.div>
 
         </div>
 

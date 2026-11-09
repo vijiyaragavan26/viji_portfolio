@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import {
   Mail,
   Phone,
@@ -114,7 +115,13 @@ export const ContactSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* Left Column: Vertical Stack of 4 Cards + LinkedIn Banner */}
-          <div className="lg:col-span-5 flex flex-col space-y-4">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-40px' }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            className="lg:col-span-5 flex flex-col space-y-4"
+          >
             
             {/* Card 1: EMAIL INQUIRIES */}
             <div className="p-4 sm:p-5 rounded-2xl bg-[#140A0E]/90 border border-red-500/25 hover:border-red-500/50 transition-all duration-300 shadow-lg shadow-red-950/20 backdrop-blur-sm group">
@@ -263,10 +270,16 @@ export const ContactSection: React.FC = () => {
               </div>
             </a>
 
-          </div>
+          </motion.div>
 
           {/* Right Column: Send Direct Message / Research Inquiry */}
-          <div className="lg:col-span-7">
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-40px' }}
+            transition={{ duration: 0.6, delay: 0.15, ease: 'easeOut' }}
+            className="lg:col-span-7"
+          >
             <div className="rounded-3xl bg-[#140A0E]/95 border border-red-500/30 p-6 sm:p-8 backdrop-blur-xl shadow-2xl relative">
               
               {/* Form Title with Mail Icon */}
@@ -372,18 +385,20 @@ export const ContactSection: React.FC = () => {
                 </div>
 
                 {/* Submit Action */}
-                <button
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                   type="submit"
                   className="w-full py-3.5 px-6 rounded-xl font-bold text-xs sm:text-sm bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white flex items-center justify-center gap-2 shadow-lg shadow-red-500/25 active:scale-[0.99] transition-all cursor-pointer mt-4"
                 >
                   <Send className="w-4 h-4 text-white" />
                   <span>Send Message</span>
-                </button>
+                </motion.button>
 
               </form>
 
             </div>
-          </div>
+          </motion.div>
 
         </div>
 

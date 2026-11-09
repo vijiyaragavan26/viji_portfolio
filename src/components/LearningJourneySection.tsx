@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import {
   Compass,
   ArrowRight,
@@ -40,10 +41,15 @@ export const LearningJourneySection: React.FC = () => {
 
         {/* Learning Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {learning.map((item) => (
-            <div
+          {learning.map((item, idx) => (
+            <motion.div
               key={item.id}
-              className="rounded-2xl bg-dark-surface/85 dark:bg-dark-surface/85 bg-white border border-dark-border dark:border-dark-border border-slate-200 p-6 flex flex-col justify-between hover:border-primary/40 transition-all duration-300 shadow-sm hover:shadow-lg"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-30px' }}
+              transition={{ duration: 0.5, delay: idx * 0.1, ease: 'easeOut' }}
+              whileHover={{ y: -6, transition: { duration: 0.2 } }}
+              className="rounded-2xl bg-dark-surface/85 dark:bg-dark-surface/85 bg-white border border-dark-border dark:border-dark-border border-slate-200 p-6 flex flex-col justify-between hover:border-primary/50 transition-colors shadow-sm hover:shadow-xl hover:shadow-primary/5 cursor-default"
             >
               <div>
                 {/* Topic header */}
@@ -62,12 +68,15 @@ export const LearningJourneySection: React.FC = () => {
                   {item.topic}
                 </h3>
 
-                {/* Progress bar (manual configuration) */}
+                {/* Animated Progress Bar */}
                 {item.progressLevel !== undefined && (
                   <div className="w-full bg-dark-bg dark:bg-dark-bg bg-slate-200 h-2 rounded-full overflow-hidden mb-6 border border-dark-border/50">
-                    <div
-                      className="bg-gradient-to-r from-primary to-secondary h-full rounded-full transition-all duration-500"
-                      style={{ width: `${item.progressLevel}%` }}
+                    <motion.div
+                      className="bg-gradient-to-r from-red-600 via-rose-500 to-red-500 h-full rounded-full"
+                      initial={{ width: 0 }}
+                      whileInView={{ width: `${item.progressLevel}%` }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 1.2, ease: 'easeOut', delay: idx * 0.15 }}
                     />
                   </div>
                 )}
@@ -117,14 +126,14 @@ export const LearningJourneySection: React.FC = () => {
                   </span>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* Note on genuine progress */}
         <div className="mt-12 text-center">
           <p className="text-xs font-mono text-dark-muted dark:text-dark-muted text-slate-500">
-            &bull; Goals and progress are updated manually in <code className="text-primary">src/data/learning.ts</code> reflecting actual weekly engineering practice.
+            &bull; Goals, active milestones, and learning tracks reflect genuine weekly computer science and engineering practice.
           </p>
         </div>
 
