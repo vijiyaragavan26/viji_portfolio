@@ -1,0 +1,158 @@
+import React, { useState } from 'react';
+import {
+  Code,
+  Sparkles,
+  Cpu,
+  ChevronDown,
+  ChevronUp,
+  GraduationCap,
+  Target,
+  Users,
+  Compass,
+} from 'lucide-react';
+import { aboutFeatures } from '../data/profile';
+import { usePortfolioData } from '../context/DataContext';
+
+export const AboutSection: React.FC = () => {
+  const { profile } = usePortfolioData();
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const getFeatureIcon = (iconName: string) => {
+    switch (iconName) {
+      case 'code':
+        return <Code className="w-6 h-6 text-blue-400" />;
+      case 'sparkles':
+        return <Sparkles className="w-6 h-6 text-purple-400" />;
+      case 'cpu':
+        return <Cpu className="w-6 h-6 text-emerald-400" />;
+      default:
+        return <Code className="w-6 h-6 text-blue-400" />;
+    }
+  };
+
+  return (
+    <section id="about" className="py-24 relative overflow-hidden">
+      {/* Background ambient element */}
+      <div className="absolute top-1/2 left-0 w-80 h-80 bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-mono font-medium mb-3">
+            <span>ABOUT ME</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-dark-text tracking-tight mb-4">
+            {profile.aboutHeading}
+          </h2>
+          <p className="text-base sm:text-lg text-dark-muted dark:text-dark-muted text-slate-600 leading-relaxed">
+            {profile.aboutText}
+          </p>
+        </div>
+
+        {/* 3 Core Pillar Feature Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          {aboutFeatures.map((feature, idx) => (
+            <div
+              key={feature.title}
+              className="group relative rounded-2xl bg-dark-surface/70 dark:bg-dark-surface/70 bg-white border border-dark-border dark:border-dark-border border-slate-200 p-8 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-primary/10 flex flex-col justify-between"
+            >
+              <div>
+                <div
+                  className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${feature.gradient} border ${feature.borderColor} flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300 shadow-sm`}
+                >
+                  {getFeatureIcon(feature.icon)}
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-dark-text mb-3">
+                  {feature.title}
+                </h3>
+                <p className="text-sm text-dark-muted dark:text-dark-muted text-slate-600 leading-relaxed">
+                  {feature.description}
+                </p>
+              </div>
+
+              <div className="mt-6 pt-4 border-t border-dark-border/50 dark:border-dark-border/50 border-slate-100 flex items-center justify-between text-xs font-mono text-dark-muted">
+                <span>Pillar 0{idx + 1}</span>
+                <span className="text-primary font-semibold">&bull; Active Track</span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Expandable "More About Me" Card */}
+        <div className="rounded-2xl bg-dark-surface/50 dark:bg-dark-surface/50 bg-slate-50 border border-dark-border dark:border-dark-border border-slate-200 p-6 sm:p-8 transition-all">
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="w-full flex items-center justify-between text-left focus:outline-none group"
+            aria-expanded={isExpanded}
+          >
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary/20 transition-colors">
+                <Compass size={20} />
+              </div>
+              <div>
+                <h4 className="text-base sm:text-lg font-bold text-slate-900 dark:text-dark-text group-hover:text-primary transition-colors">
+                  More About Me &amp; Engineering Philosophy
+                </h4>
+                <p className="text-xs text-dark-muted dark:text-dark-muted text-slate-500">
+                  {isExpanded ? 'Click to collapse insights' : 'Click to learn about my approach, problem solving, and goals'}
+                </p>
+              </div>
+            </div>
+
+            <div className="p-2 rounded-lg border border-dark-border dark:border-dark-border border-slate-200 text-dark-muted group-hover:text-primary transition-colors">
+              {isExpanded ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+            </div>
+          </button>
+
+          {isExpanded && (
+            <div className="mt-8 pt-6 border-t border-dark-border/70 dark:border-dark-border/70 border-slate-200 grid grid-cols-1 md:grid-cols-2 gap-6 animate-in fade-in duration-300">
+              
+              <div className="p-5 rounded-xl bg-dark-bg/60 dark:bg-dark-bg/60 bg-white border border-dark-border/60 dark:border-dark-border/60 border-slate-200">
+                <div className="flex items-center space-x-2 text-primary font-semibold text-sm mb-2">
+                  <Target size={16} />
+                  <span>Engineering Mindset</span>
+                </div>
+                <p className="text-xs sm:text-sm text-dark-muted dark:text-dark-muted text-slate-600 leading-relaxed">
+                  {profile.expandableAbout.engineeringMindset}
+                </p>
+              </div>
+
+              <div className="p-5 rounded-xl bg-dark-bg/60 dark:bg-dark-bg/60 bg-white border border-dark-border/60 dark:border-dark-border/60 border-slate-200">
+                <div className="flex items-center space-x-2 text-secondary font-semibold text-sm mb-2">
+                  <GraduationCap size={16} />
+                  <span>Foundational Problem Solving</span>
+                </div>
+                <p className="text-xs sm:text-sm text-dark-muted dark:text-dark-muted text-slate-600 leading-relaxed">
+                  {profile.expandableAbout.problemSolving}
+                </p>
+              </div>
+
+              <div className="p-5 rounded-xl bg-dark-bg/60 dark:bg-dark-bg/60 bg-white border border-dark-border/60 dark:border-dark-border/60 border-slate-200">
+                <div className="flex items-center space-x-2 text-emerald-400 font-semibold text-sm mb-2">
+                  <Users size={16} />
+                  <span>Collaboration & Community</span>
+                </div>
+                <p className="text-xs sm:text-sm text-dark-muted dark:text-dark-muted text-slate-600 leading-relaxed">
+                  {profile.expandableAbout.collaboration}
+                </p>
+              </div>
+
+              <div className="p-5 rounded-xl bg-dark-bg/60 dark:bg-dark-bg/60 bg-white border border-dark-border/60 dark:border-dark-border/60 border-slate-200">
+                <div className="flex items-center space-x-2 text-blue-400 font-semibold text-sm mb-2">
+                  <Sparkles size={16} />
+                  <span>Current Aspirations</span>
+                </div>
+                <p className="text-xs sm:text-sm text-dark-muted dark:text-dark-muted text-slate-600 leading-relaxed">
+                  {profile.expandableAbout.aspirations}
+                </p>
+              </div>
+
+            </div>
+          )}
+        </div>
+
+      </div>
+    </section>
+  );
+};
